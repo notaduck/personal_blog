@@ -39,5 +39,5 @@ module.exports = {
 		author: 'Daniel Guldberg Aaes',
 		title: 'Site title'
 	},
-	pathPrefix: '/gatsby'
+	pathPrefix: '/personal_blog'
 };

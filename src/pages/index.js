@@ -36,28 +36,31 @@ const IndexPage = ({data}) => (
 
 export const query = graphql`
 query indexQuery {
-    allMarkdownRemark(limit: 10) {
-        edges {
-            node {
-			id
-            excerpt(pruneLength: 250)
-            timeToRead
-                frontmatter {
-                    title
-                    path 
-                    image {
-                      	publicURL
-          	            childImageSharp {
-                        sizes(maxWidth: 200) {
-                        ...GatsbyImageSharpSizes
-                      }
-                    }
-                  }
-                    date(formatString: "MMMM DD, YYYY")
-                }
-            }
-        }
-    }
+	allMarkdownRemark(
+		sort: { fields: [frontmatter___date], order: DESC }
+		filter: { frontmatter: { published: {eq: true} } }
+	) {
+			edges {
+				node {
+					id
+					excerpt(pruneLength: 250)
+					timeToRead
+					frontmatter {
+							title
+							path 
+							image {
+								publicURL
+								childImageSharp {
+								sizes(maxWidth: 200) {
+								...GatsbyImageSharpSizes
+								}
+							}
+						}
+					date(formatString: "MMMM DD, YYYY")
+				}
+			}
+		}
+	}
 	background: imageSharp(id: { regex: "/Markdown-Flat.png/" }) {
 		sizes(maxWidth: 1240){
 			...GatsbyImageSharpSizes

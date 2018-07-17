@@ -3,6 +3,7 @@ path: '/08-24-2017-first-blog'
 title: 'Why you should use markdown'
 image: '../../images/Markdown-Flat.png'
 date: '2018-03-02'
+published: true
 ---
 <!-- ![Pic Alt](./Graylog2.png) -->
 **What is Markdown**

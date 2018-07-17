@@ -82,6 +82,7 @@ const navLinks = [
 class Header extends React.Component {
 	// FIXME: There is an issue regarding going from a notHome to a notHome page, it will still make the animation
 	componentDidUpdate = (prevProps, prevState ) => {
+		console.log(location.pathname)
 		if(location.pathname !== prevProps.location.pathname){
 			if (this.props.location.pathname === '/') {
 				this.wrapper.animate([
@@ -116,14 +117,13 @@ class Header extends React.Component {
 			>
 				<HeaderContainer>
 					<header className='header'>
-
 					<div style={{width:100}}>  
 						<h1> 
 							<Link exact to='/'> 
 								<Img sizes={logo} />
 							</Link>
 						</h1>
-			</div>
+					</div>
 						<NavBar>
 						<ul>
 							{navLinks.map(link => (
