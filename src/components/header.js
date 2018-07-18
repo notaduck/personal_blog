@@ -19,7 +19,6 @@ const HeaderWrapper = styled.div`
 
 const HeaderContainer = styled.div`
 	margin: 0, auto;
-	max-width: 960px;
 	padding: 1.45rem 1.0875rem;
 	position: relative;
 	z-index: 2;
@@ -28,6 +27,13 @@ const HeaderContainer = styled.div`
 `;
 
 const NavBar = styled.nav`
+		{
+
+			position:absolute;
+			right:1.0875rem;
+			transition:.4s;
+			bottom: ${({ isHome }) => (isHome ? '-330%' : '50px')}
+		}
 	ul {
 			list-style-type: none;
 			margin: 0;
@@ -38,6 +44,7 @@ const NavBar = styled.nav`
 
 	li {
 			float: left;
+			margin-bottom: 0;
 	}
 
 	li a {
@@ -47,6 +54,8 @@ const NavBar = styled.nav`
 			padding: 10px 16px;
 			text-decoration: none;
 			color: #2F333D;
+			transition: .5s;		
+			border-bottom: 4px solid #ecf0f1;
 	}
 
 	li a:hover:not(.active) {
@@ -54,20 +63,25 @@ const NavBar = styled.nav`
 	}
 
 	.active {
+		border-bottom: 4px solid #BC435D;
 		background-color: #BC435D;
 	}
 `;
 
 const navLinks = [
-	{	name: 'Home',
+	{
+		name: 'Home',
 		path: '/'
-	},{
+	},
+	{
 		name: 'About',
 		path: '/about'
-	},{
+	},
+	{
 		name: 'Contact',
 		path: '/contact'
-	},{
+	},
+	{
 		name: 'Projects',
 		path: '/projects'
 	}
@@ -77,8 +91,13 @@ const navLinks = [
 class Header extends React.Component {
 	// FIXME: There is an issue regarding going from a notHome to a notHome page, it will still make the animation
 	componentDidUpdate = (prevProps, prevState ) => {
-		console.log('personal_blog' + location.pathname)
+		console.log(prevProps.location.pathname);
+		console.log(prevState)
+		console.log(location.pathname)
+
+		// console.log(this.wrapper.childNodes[0].childNodes[0].childNodes[1].);
 		if(location.pathname !== prevProps.location.pathname){
+			console.log(location);
 			if (this.props.location.pathname === '/') {
 				this.wrapper.animate([
 					{	height: "20vh" }, // Animate from
@@ -89,9 +108,9 @@ class Header extends React.Component {
 					easing: "cubic-bezier(0.86,0,0.07,1)",
 					iterations: 1
 				})
-			} else {
+			} else if(prevProps.location.pathname==='/') {
 				this.wrapper.animate([
-					{	height: "70vh" }, // Animate from
+					{ height: "70vh" }, // Animate from
 					{ height: "20vh" } // Anite to
 				], {
 					duration: 450,
@@ -99,6 +118,8 @@ class Header extends React.Component {
 					easing: "cubic-bezier(0.86,0,0.07,1)",
 					iterations: 1
 				})
+			} else {
+
 			}
 		}	
 	}
@@ -119,7 +140,7 @@ class Header extends React.Component {
 							</Link>
 						</h1>
 					</div>
-						<NavBar>
+						<NavBar  isHome={location.pathname === '/'} >
 						<ul>
 							{navLinks.map(link => (
 								<li key={link.name}>
@@ -136,7 +157,7 @@ class Header extends React.Component {
 					top: 0,
 					width: '100%',
 					height: '100%',
-					opacity: 0.8
+					opacity: 0.5
 				}}
 				sizes={background} />
 			</HeaderWrapper>
