@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import Logo from '../images/logo-red.png'
 
 const HeaderWrapper = styled.div`
 	background: #2F333D;
