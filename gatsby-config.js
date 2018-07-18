@@ -37,7 +37,7 @@ module.exports = {
 
 	siteMetadata: {
 		author: 'Daniel Guldberg Aaes',
-		title: 'Site title'
+		title: 'Guldberg lab'
 	},
-	pathPrefix: '/personal_blog'
+	// pathPrefix: '/personal_blog'
 };
