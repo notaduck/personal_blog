@@ -22,7 +22,7 @@ const IndexPage = ({data}) => (
 						<h3>{post.node.frontmatter.title}</h3>
 					</Link>
 					<div className='date_details'>        
-						<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min to read</p>
+						<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
 					</div>
 					<p>{post.node.excerpt}</p>
 				</div>

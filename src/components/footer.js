@@ -8,25 +8,17 @@ const FooterWrapper = styled.ul`
 	padding: 0;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-	justify-content: flex-start
-	padding-right: 10px;
-	// justify-content: space-between;
+	justify-content: center; 
 	text-align: center;
+
 	a {
 		color: #ECF0F1;
 	}
+	
+	li {
+		margin: 0;
+	}
 `;
-
-const FooterContent = styled.li`
-    display: block;
-		justify-content: center;
-    color: white;
-    text-align: center;
-    // padding: 14px 16px;
-    text-decoration: none;
-`;
-
 
 const socialLinks = [
 	{
