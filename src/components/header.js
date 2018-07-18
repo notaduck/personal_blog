@@ -60,19 +60,15 @@ const NavBar = styled.nav`
 `;
 
 const navLinks = [
-	{
-		name: 'Home',
+	{	name: 'Home',
 		path: '/'
-	},
-	{
+	},{
 		name: 'About',
 		path: '/about'
-	},
-	{
+	},{
 		name: 'Contact',
 		path: '/contact'
-	},
-	{
+	},{
 		name: 'Projects',
 		path: '/projects'
 	}
@@ -82,7 +78,7 @@ const navLinks = [
 class Header extends React.Component {
 	// FIXME: There is an issue regarding going from a notHome to a notHome page, it will still make the animation
 	componentDidUpdate = (prevProps, prevState ) => {
-		console.log(location.pathname)
+		console.log('personal_blog' + location.pathname)
 		if(location.pathname !== prevProps.location.pathname){
 			if (this.props.location.pathname === '/') {
 				this.wrapper.animate([
@@ -141,7 +137,7 @@ class Header extends React.Component {
 					top: 0,
 					width: '100%',
 					height: '100%',
-					opacity: 0.5
+					opacity: 0.8
 				}}
 				sizes={background} />
 			</HeaderWrapper>
