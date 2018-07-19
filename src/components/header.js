@@ -32,7 +32,7 @@ const NavBar = styled.nav`
 			position:absolute;
 			right:1.0875rem;
 			transition:.4s;
-			bottom: ${({ isHome }) => (isHome ? '-330%' : '50px')}
+			bottom: ${({ isHome }) => (isHome ? '-52vh' : '50px')}
 		}
 	ul {
 			list-style-type: none;
