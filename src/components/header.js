@@ -30,7 +30,7 @@ const NavBar = styled.nav`
 		{
 
 			position:absolute;
-			right:1.0875rem;
+			right:0.4875rem;
 			transition:.4s;
 			bottom: 10px;
 			z-index:10;
@@ -90,7 +90,6 @@ const navLinks = [
 
 
 class Header extends React.Component {
-	// FIXME: There is an issue regarding going from a notHome to a notHome page, it will still make the animation
 	componentDidUpdate = (prevProps, prevState ) => {
 		console.log(prevProps.location.pathname);
 		console.log(prevState)
