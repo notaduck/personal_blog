@@ -32,7 +32,8 @@ const NavBar = styled.nav`
 			position:absolute;
 			right:1.0875rem;
 			transition:.4s;
-			bottom: ${({ isHome }) => (isHome ? '-52vh' : '50px')}
+			bottom: 10px;
+			z-index:10;
 		}
 	ul {
 			list-style-type: none;
@@ -131,6 +132,15 @@ class Header extends React.Component {
 			ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
 			isHome={location.pathname === '/'}
 			>
+			<NavBar >
+			<ul>
+				{navLinks.map(link => (
+					<li key={link.name}>
+						<Link exact to={link.path}> {link.name} </Link>
+					</li>
+				))}
+			</ul>
+			</NavBar>
 				<HeaderContainer>
 					<header className='header'>
 					<div style={{width:100}}>  
@@ -140,15 +150,6 @@ class Header extends React.Component {
 							</Link>
 						</h1>
 					</div>
-						<NavBar  isHome={location.pathname === '/'} >
-						<ul>
-							{navLinks.map(link => (
-								<li key={link.name}>
-									<Link exact to={link.path}> {link.name} </Link>
-								</li>
-							))}
-						</ul>
-						</NavBar>
 					</header>
 				</HeaderContainer>
 				<Img style={{
