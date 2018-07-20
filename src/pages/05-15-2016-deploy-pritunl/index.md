@@ -3,7 +3,7 @@ path: '/deploy-pritunl'
 title: 'Deploy Pritunl on Ubuntu'
 image: '../../images/pritunl.png'
 date: '2016-05-15'
-published: true
+published: false 
 ---
 
 DESCRIPTION

@@ -3,7 +3,7 @@ path: '/markdown-post'
 title: 'Setup Graylog2 - Centos 7'
 image: '../../images/Graylog2.png'
 date: '2018-08-24'
-published: true
+published: false 
 ---
 
 Graylog2 is a centralized log management system. It is based on Elasticsearch
