@@ -23,32 +23,32 @@ First of all, you want to head over to [Disqus](https://disqus.com) and create a
 React actually has a Disqus [component](https://github.com/disqus/disqus-react) which is super simple and easy to use, so let's install that right away.
 
 #### npm:
-```
+```bash
 npm install --save disqus-react
 ```
 
 
 #### yarn:
-```
+```bash
 yarn add disqus-react
 ```
 
 ### Configuration
 
 I have added the following lines to my post template, you want to add you shortname to `disqusShortname` and change the `identifier` and `title`to match your values. 
-```
+```jsx{3,4-6,12}
 export default function Template({data}) {
     const {markdownRemark: post} = data;
-+    const disqusShortname = '<insert-disqus-shortname-here>';
-+    const disqusConfig = {
-+        identifier: post.id,
-+        title: post.frontmatter.title,
+    const disqusShortname = '<insert-disqus-shortname-here>';
+    const disqusConfig = {
+        identifier: post.id,
+        title: post.frontmatter.title,
   };
   return (
     <div>
       <h1>{post.frontmatter.title}</h1>
-+     <div dangerouslySetInnerHTML={{__html: post.html}} />
-            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      <div dangerouslySetInnerHTML={{__html: post.html}} />
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </div>
   )
 }

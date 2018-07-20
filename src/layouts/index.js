@@ -10,6 +10,7 @@ import Footer from '../components/footer';
 import 'normalize.css';
 import './index.scss';
 
+require("prismjs/themes/prism.css");
 library.add(faEnvelope, faKey, faClock); // Add icons to the internal fontawesome libary
 
 const Layout = ({ children, data, location}) => (
