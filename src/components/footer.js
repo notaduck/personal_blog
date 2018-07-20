@@ -13,6 +13,7 @@ const FooterWrapper = styled.ul`
 
 	a {
 		color: #ECF0F1;
+    text-decoration: none;
 	}
 	
 	li {

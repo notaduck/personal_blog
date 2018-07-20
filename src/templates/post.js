@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import Link from 'gatsby-link'
-
+import { DiscussionEmbed } from "disqus-react";
 
 const Button = styled.div`
     display: flex;
@@ -13,10 +13,16 @@ const Button = styled.div`
 export default function Template({data}) {
   const {markdownRemark: post} = data;
   // const post = data.markdownRemark;
+	const disqusShortname = "guldberglab";
+  const disqusConfig = {
+		identifier: post.id,
+		title: post.frontmatter.title,
+  };
   return (
     <div>
       <h1>{post.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{__html: post.html}} />
+			<DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
 			<Button>
 			<Link to='/' 
 				style={{
