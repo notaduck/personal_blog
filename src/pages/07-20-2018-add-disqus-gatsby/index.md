@@ -9,8 +9,8 @@ published: true
 # Introduction
 -------------------------------------------------
 Everybody knows that summer vacation means extra time for personal projects, I decided to use mine to move my former WordPress website to a new platform to learn something new.
-I've used HTML, CSS and react before I've to admit that I suck at it, so I decided to get my hands dirty... After getting an overview of the different options out there I quickly decided that [Gatsby](https://www.gatsbyjs.org) was the right fit for my needs.  
-However, I quickly ran into some trouble regarding adding a comment system, since Gatsby is a static site generator and therefore doesn't allow us to add a simple comment system since we don't have a dynamic backend. This is where [Disqus](https://disqus.com) enters the big picture and allows us to add a commenting system where the backend is taken care of Disqus, it gives me extra time since I don't have to maintain the comment system and reduces my power bill since I don't have to have the server running myself.  
+I've used HTML, CSS and react before but I've to admit that I suck at it, so I decided to get my hands dirty... After getting an overview of the different options out there I quickly decided that [Gatsby](https://www.gatsbyjs.org) was the right fit for my needs.  
+However, I quickly ran into some trouble regarding adding a comment system, since Gatsby is a static site generator and therefore doesn't allow us to add a simple comment system since we don't have a dynamic backend. This is where [Disqus](https://disqus.com) enters the big picture and allows us to add a commenting system where the backend is taken care of by Disqus itself , it gives me extra time since I don't have to maintain the comment system and it furthermore reduces my power bill in the view of that I don't have to have the server running myself.  
 
 
 # Installation and configuration
