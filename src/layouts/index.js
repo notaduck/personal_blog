@@ -1,16 +1,14 @@
 import React from 'react';
-import createFragment from 'react-addons-create-fragment'; // ES6
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faKey, faClock} from '@fortawesome/free-solid-svg-icons';
-import faGoogle from '@fortawesome/fontawesome-free-brands/faGoogle';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import 'normalize.css';
 import './index.scss';
 
-require("prismjs/themes/prism.css");
+import "prismjs/themes/prism.css"
 library.add(faEnvelope, faKey, faClock); // Add icons to the internal fontawesome libary
 
 const Layout = ({ children, data, location}) => (

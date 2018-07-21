@@ -73,7 +73,9 @@ module.exports = {
 
 	siteMetadata: {
 		author: 'Daniel Guldberg Aaes',
-		title: 'Guldberg lab'
+		title: 'Guldberg lab',
+		name:"google-site-verification",
+		content:"Ji_Q-7Puvr2Mzy_ZhNDZ2F-hMubwpz3SujY2WAms9vY"
 	},
 	// pathPrefix: '/personal_blog'
 };
