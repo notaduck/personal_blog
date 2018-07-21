@@ -83,13 +83,17 @@ module.exports = {
 				exclude: ["/preview/**", "/do-not-track/me/too/"],
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-sitemap'
+		},
 	],
 
 	siteMetadata: {
 		author: 'Daniel Guldberg Aaes',
 		title: 'Guldberg lab',
 		name:"google-site-verification",
-		content:"Ji_Q-7Puvr2Mzy_ZhNDZ2F-hMubwpz3SujY2WAms9vY"
+		content:"Ji_Q-7Puvr2Mzy_ZhNDZ2F-hMubwpz3SujY2WAms9vY",
+		siteUrl: "https://guldberglab.info"
 	},
 	// pathPrefix: '/personal_blog'
 };
