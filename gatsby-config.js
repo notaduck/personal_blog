@@ -1,6 +1,5 @@
 module.exports = {
 	plugins: [
-    'gatsby-plugin-eslint',
 		'gatsby-remark-copy-linked-files',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
@@ -58,7 +57,18 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 				name: 'images'
 			}
-		}
+		},
+		{
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|cache|public)/,
+        options: {
+          emitWarning: true,
+          failOnError: false
+        }
+      }
+    }
 	],
 
 	siteMetadata: {

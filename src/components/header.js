@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import PropTypes from 'prop-types'
 
 const HeaderWrapper = styled.div`
 	background: #2F333D;
@@ -92,11 +91,6 @@ const navLinks = [
 
 class Header extends React.Component {
 	componentDidUpdate = (prevProps, prevState ) => {
-		// console.log(prevProps.location.pathname);
-		// console.log(prevState)
-		// console.log(location.pathname)
-
-		// console.log(this.wrapper.childNodes[0].childNodes[0].childNodes[1].);
 		if(location.pathname !== prevProps.location.pathname){
 			// console.log(location);
 			if (this.props.location.pathname === '/') {
@@ -120,7 +114,7 @@ class Header extends React.Component {
 					iterations: 1
 				})
 			} else {
-
+				return
 			}
 		}	
 	}
