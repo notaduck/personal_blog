@@ -5,7 +5,8 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "strict": 0
+    "strict": 0,
+		"indent" : [2, "tab"]
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
 }
