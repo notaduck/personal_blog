@@ -1,5 +1,6 @@
 module.exports = {
 	plugins: [
+    'gatsby-plugin-eslint',
 		'gatsby-remark-copy-linked-files',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',

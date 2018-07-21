@@ -34,7 +34,7 @@ const socialLinks = [
 	}
 ];
 
-const Footer = ({ siteTitle }) => (
+const Footer = () => (
 	<FooterWrapper>
 		{socialLinks.map(link => (
 			<li key={link.name} style={{padding: '14px 16px'}}>

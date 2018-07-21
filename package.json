@@ -44,11 +44,12 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-google": "^0.9.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-node": "^6.0.1",
