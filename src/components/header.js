@@ -123,27 +123,27 @@ class Header extends React.Component {
 		const { siteTitle, background, location, logo} = this.props;
 		return (
 			<HeaderWrapper
-			ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
-			isHome={location.pathname === '/'}
+				ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
+				isHome={location.pathname === '/'}
 			>
-			<NavBar >
-			<ul>
-				{navLinks.map(link => (
-					<li key={link.name}>
-						<Link exact to={link.path}> {link.name} </Link>
-					</li>
-				))}
-			</ul>
-			</NavBar>
+				<NavBar >
+					<ul>
+						{navLinks.map(link => (
+							<li key={link.name}>
+								<Link exact to={link.path}> {link.name} </Link>
+							</li>
+						))}
+					</ul>
+				</NavBar>
 				<HeaderContainer>
 					<header className='header'>
-					<div style={{width:100}}>  
-						<h1> 
-							<Link exact to='/'> 
-								<Img sizes={logo} />
-							</Link>
-						</h1>
-					</div>
+						<div style={{width:300}}>  
+							<h1> 
+								<Link exact to='/'> 
+									<Img sizes={logo} />
+								</Link>
+							</h1>
+						</div>
 					</header>
 				</HeaderContainer>
 				<Img style={{

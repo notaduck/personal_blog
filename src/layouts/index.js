@@ -57,7 +57,7 @@ export const query = graphql`
 			}
 		}
 
-		logo: imageSharp(id: { regex: "/coming-soon.jpg/" }) {
+		logo: imageSharp(id: { regex: "/rev4.png/" }) {
 			sizes(maxWidth: 1920){
 				...GatsbyImageSharpSizes
 			}
