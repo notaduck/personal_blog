@@ -6,8 +6,9 @@ date: '2018-07-22'
 type: 'algo'
 published: true 
 ---
+----------------------------------------------------------
+## Java Implementation
 ```java
-
 public class DoublyLinkList<Value> {
 
     private Node head;
@@ -37,19 +38,11 @@ public class DoublyLinkList<Value> {
         }
     }
 
-    public boolean isEmpty() {
-        return (head == null);
-    }
-    
-    public void printList(){
-        Node current = head;
-
-        while( head != null ){
-            System.out.println(current);
-            if (current.next() != null) current = current.next();
-            else break; 
-        }
-
+    public void addLast(Value value){
+        Node newLast = new Node(value);
+        newLast.prev = tail;
+        tail.next = newLast;
+        tail = newLast;
     }
 
     public void deleteFirst(){
@@ -79,6 +72,21 @@ public class DoublyLinkList<Value> {
 
     public int getSize(){
         return size;
+    }
+
+    public boolean isEmpty() {
+        return (head == null);
+    }
+
+    public void printList(){
+        Node current = head;
+
+        while( head != null ){
+            System.out.println(current);
+            if (current.next() != null) current = current.next();
+            else break;
+        }
+
     }
 
     private static class Node<Value> {

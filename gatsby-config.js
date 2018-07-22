@@ -1,5 +1,6 @@
 module.exports = {
 	plugins: [
+		'gatsby-plugin-robots-txt',
 		'gatsby-remark-copy-linked-files',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
@@ -8,6 +9,7 @@ module.exports = {
 			resolve: 'gatsby-transformer-remark',
 			options: {
 				plugins: [
+					'gatsby-remark-katex',
 					{
 						resolve: 'gatsby-remark-images',
 						options: {
