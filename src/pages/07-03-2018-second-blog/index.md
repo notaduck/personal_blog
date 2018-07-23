@@ -3,6 +3,7 @@ path: '/markdown-post'
 title: 'Setup Graylog2 - Centos 7'
 image: '../../images/Graylog2.png'
 date: '2018-08-24'
+type: 'blogpost'
 published: false 
 ---
 

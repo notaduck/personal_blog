@@ -3,6 +3,7 @@ path: '/add_-disqus-to-gatsby'
 title: 'Add Disqus to Gatsby'
 image: '../../images/gatsby-disqus.png/'
 date: '2018-08-24'
+type: 'blogpost'
 published: true
 ---
 

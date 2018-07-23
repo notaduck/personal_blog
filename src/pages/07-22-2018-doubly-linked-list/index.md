@@ -1,12 +1,14 @@
 ---
 path: '/doubly-linked-list'
 title: 'Doubly linked list from scratch'
-image: '../../images/coming-soon.jpg'
+image: '../../images/new-soon.png'
 date: '2018-07-22'
 type: 'algo'
 published: true 
----
 ----------------------------------------------------------
+
+![Doubly Linked List](../../images/d.png "Doubly Linked list")
+
 ## Java Implementation
 ```java
 public class DoublyLinkList<Value> {

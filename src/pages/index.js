@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import '../styles/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
-
+import mySVG from '../images/Doubly_Linked_List.svg'
 const IndexPage = ({data}) => (
 	<div>
 		<h1> Posts </h1>
@@ -26,7 +26,6 @@ const IndexPage = ({data}) => (
 					</div>
 					<p>{post.node.excerpt}</p>
 				</div>
-				<Img sizes={data.background.sizes}/>
 			</div>
 
 		))}
@@ -38,7 +37,7 @@ export const query = graphql`
 query indexQuery {
 	allMarkdownRemark(
 		sort: { fields: [frontmatter___date], order: DESC }
-		filter: { frontmatter: { published: {eq: true} } }
+		filter: { frontmatter: { published: {eq: true}, type: {eq: "blogpost"} } }
 	) {
 			edges {
 				node {
@@ -59,11 +58,6 @@ query indexQuery {
 					date(formatString: "MMMM DD, YYYY")
 				}
 			}
-		}
-	}
-	background: imageSharp(id: { regex: "/Markdown-Flat.png/" }) {
-		sizes(maxWidth: 1240){
-			...GatsbyImageSharpSizes
 		}
 	}
 }
