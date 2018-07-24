@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -90,7 +91,7 @@ const navLinks = [
 
 
 class Header extends React.Component {
-	componentDidUpdate = (prevProps, prevState ) => {
+	componentDidUpdate = (prevProps) => {
 		if(location.pathname !== prevProps.location.pathname){
 			// console.log(location);
 			if (this.props.location.pathname === '/') {
@@ -120,7 +121,7 @@ class Header extends React.Component {
 	}
 
 	render() {
-		const { siteTitle, background, location, logo} = this.props;
+		const { background, location, logo} = this.props;
 		return (
 			<HeaderWrapper
 				ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
@@ -160,7 +161,29 @@ class Header extends React.Component {
 	}
 }
 
+Header.propTypes = {
+	// location: PropTypes.string,
+	location: PropTypes.shape({
+		hash: PropTypes.String,
+		pathname: PropTypes.String,
+		search: PropTypes.String 
+	}),
 
+	background: PropTypes.shape({
+		aspectRatio: PropTypes.Number,
+		base64: PropTypes.String,
+		sizes: PropTypes.String,
+		src: PropTypes.String,
+		srcSet: PropTypes.String
+	}),
 
+	logo: PropTypes.shape({
+		aspectRatio: PropTypes.Number,
+		base64: PropTypes.String,
+		sizes: PropTypes.String,
+		src: PropTypes.String,
+		srcSet: PropTypes.String
+	})
+};
 
 export default Header;
