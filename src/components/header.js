@@ -75,6 +75,11 @@ const navLinks = [
 		name: 'Home',
 		path: '/'
 	},
+	
+	{
+		name: 'Tech theory ',
+		path: '/algo_data'
+	},
 	{
 		name: 'About',
 		path: '/about'

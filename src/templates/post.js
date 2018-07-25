@@ -11,31 +11,30 @@ const Button = styled.div`
 `;
 
 export default function Template({data}) {
-  const {markdownRemark: post} = data;
-  // const post = data.markdownRemark;
+	const {markdownRemark: post} = data;
+	// const post = data.markdownRemark;
 	const disqusShortname = "guldberglab";
-  const disqusConfig = {
+	const disqusConfig = {
 		identifier: post.id,
 		title: post.frontmatter.title,
-  };
+	};
 	return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{__html: post.html}} />
-			<DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+		<div>
+			<h1>{post.frontmatter.title}</h1>
+			<div dangerouslySetInnerHTML={{__html: post.html}} />
 			<Button>
-			<Link to='/' 
-				style={{
-					backgroundColor: '#2F333D',
-					color: '#ECF0F1',
-					padding: '14px 35px',
-					textAlign: 'center',
-				}}>
+				<Link to='/' 
+					style={{
+						backgroundColor: '#2F333D',
+						color: '#ECF0F1',
+						padding: '14px 35px',
+						textAlign: 'center',
+					}}>
 		Home </Link>
 			</Button>
-
-    </div>
-  )
+			<DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+		</div>
+	)
 }
 
 export const postQuery = graphql`

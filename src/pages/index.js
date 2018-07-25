@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import '../styles/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
-import mySVG from '../images/Doubly_Linked_List.svg'
+
 const IndexPage = ({data}) => (
 	<div>
 		<h1> Posts </h1>
