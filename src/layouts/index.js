@@ -7,8 +7,10 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import 'normalize.css';
 import './index.scss';
-
 import "prismjs/themes/prism.css"
+
+import icon32 from '../images/favicon-32x32.png'
+
 library.add(faEnvelope, faKey, faClock); // Add icons to the internal fontawesome libary
 
 const Layout = ({ children, data, location}) => (
@@ -17,7 +19,10 @@ const Layout = ({ children, data, location}) => (
 			title={data.site.siteMetadata.title}
 			meta={[
 				{ name: 'description', content: 'Sample' },
-				{ name: 'keywords',	content: 'sample, something' }
+				{ name: 'keywords',	content: 'sample, something' },
+			]}
+			link={[
+				{ rel: 'shortcut icon', type: 'image/png', href: `${icon32}` }
 			]}
 		/>
 		<Header  
