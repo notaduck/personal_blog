@@ -21,9 +21,9 @@ const Layout = ({ children, data, location}) => (
 				{ name: 'description', content: 'Sample' },
 				{ name: 'keywords',	content: 'sample, something' },
 			]}
-			link={[
-				{ rel: 'shortcut icon', type: 'image/png', href: `${icon32}` }
-			]}
+			// link={[
+			// 	{ rel: 'shortcut icon', type: 'image/png', href: `${icon32}` }
+			// ]}
 		/>
 		<Header  
 			background={data.background.sizes} 
