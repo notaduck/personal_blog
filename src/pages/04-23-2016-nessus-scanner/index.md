@@ -1,14 +1,11 @@
 ---
-path: 'Nesus_Vul_Scanner'
-title: Install Nessus vulnerability scanner on Ubuntu'
+path: '/install-nessus-ubuntu'
+title: 'How to install Nessus vulnerability scanner'
 image: '../../images/coming-soon.jpg'
 date: '2016-04-24'
 type: 'blogpost'
 published: true 
 ---
-
-
-# How to setup Nessus vulnerability scanner
 
 Nessus has a free version for personal use where you can scan your
 local network remotely for vulnerabilities that malicious hackers could use to
