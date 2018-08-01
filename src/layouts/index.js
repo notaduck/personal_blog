@@ -34,7 +34,8 @@ const Layout = ({ children, data, location}) => (
 				margin: '0 auto',
 				maxWidth: 1040,
 				padding: '0px 1.0875rem 1.45rem',
-				paddingTop: 0
+				paddingTop: 0,
+				minHeight: 'calc(100vh - 225px)' // added minimum height for content so that footer will be at bottom always
 			}}
 		>
 			{children()}

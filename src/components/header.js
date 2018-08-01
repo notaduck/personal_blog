@@ -10,12 +10,19 @@ const HeaderWrapper = styled.div`
 	margin-bottom: 2.5rem;
 	overflow: hidden;
 	position: relative;
+
+	// added media query for responsive hight when window size in small
+	@media (max-width: 636px) {	 
+		height: 70vh !important;
+			
+	}
 	height: ${({ isHome }) => (isHome ? '70vh' : '20vh')}
 	h1 {
 		img {
 			height: 80px;
 		}
 	}
+
 `;
 
 const HeaderContainer = styled.div`
@@ -25,6 +32,16 @@ const HeaderContainer = styled.div`
 	z-index: 2;
 	display: flex;
 	justify-content: space-between;
+	div {
+		width: ${({ isHome }) => (isHome ? '300px' : '100px')}
+	}
+
+	// added media query for responsive div of image when window size in small	
+	@media (max-width: 636px) {
+		div {
+			width: 100px !important;
+		}	
+	}
 `;
 
 const NavBar = styled.nav`
@@ -68,6 +85,14 @@ const NavBar = styled.nav`
 		border-bottom: 4px solid #BC435D;
 		background-color: #BC435D;
 	}
+
+	// added media query for responsive navbar make li width 100% when window size in small	
+	@media (max-width: 636px) {
+		width:97%;
+		li{
+			width:100%;
+		}
+	  }
 `;
 
 const navLinks = [
@@ -97,36 +122,61 @@ const navLinks = [
 
 class Header extends React.Component {
 	componentDidUpdate = (prevProps) => {
-		if(location.pathname !== prevProps.location.pathname){
-			// console.log(location);
-			if (this.props.location.pathname === '/') {
-				this.wrapper.animate([
-					{	height: "20vh" }, // Animate from
-					{ height: "70vh" } // Anite to
-				], {
-					duration: 450,
-					fill: "forwards",
-					easing: "cubic-bezier(0.86,0,0.07,1)",
-					iterations: 1
-				})
-			} else if(prevProps.location.pathname==='/') {
-				this.wrapper.animate([
-					{ height: "70vh" }, // Animate from
-					{ height: "20vh" } // Anite to
-				], {
-					duration: 450,
-					fill: "forwards",
-					easing: "cubic-bezier(0.86,0,0.07,1)",
-					iterations: 1
-				})
-			} else {
-				return
-			}
-		}	
+		let breakpoint = window.innerWidth; //get browser window width 
+		if(breakpoint > 636){ // if browser window is greater than 636 width than make animation otherwise not
+			if(location.pathname !== prevProps.location.pathname){
+				if (this.props.location.pathname === '/') {
+					this.wrapper.animate([
+						{	height: "20vh" }, // Animate from
+						{ height: "70vh" } // Anite to
+					], {
+						duration: 450,
+						fill: "forwards",
+						easing: "cubic-bezier(0.86,0,0.07,1)",
+						iterations: 1
+					})
+					
+					// Animate logo when go to home
+					this.wrapper_logo.animate([
+						{	width: "100px" }, // Animate from
+						{ width: "300px" } // Anite to
+					], {
+						duration: 450,
+						fill: "forwards",
+						easing: "cubic-bezier(0.86,0,0.07,1)",
+						iterations: 1
+					})
+				} else if(prevProps.location.pathname==='/') {
+					this.wrapper.animate([
+						{ height: "70vh" }, // Animate from
+						{ height: "20vh" } // Anite to
+					], {
+						duration: 450,
+						fill: "forwards",
+						easing: "cubic-bezier(0.86,0,0.07,1)",
+						iterations: 1
+					})
+					
+					// Animate logo width when go from home to any route					
+					this.wrapper_logo.animate([
+						{ height: "300px" }, // Animate from
+						{ height: "100px" } // Anite to
+					], {
+						duration: 450,
+						fill: "forwards",
+						easing: "cubic-bezier(0.86,0,0.07,1)",
+						iterations: 1
+					})
+				} else {
+					return
+				}
+			}	
+		}
 	}
 
 	render() {
 		const { background, location, logo} = this.props;
+		
 		return (
 			<HeaderWrapper
 				ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
@@ -141,7 +191,10 @@ class Header extends React.Component {
 						))}
 					</ul>
 				</NavBar>
-				<HeaderContainer>
+
+				{/* Add ref for logo image to animate */}
+				<HeaderContainer ref={wrapper_logo => (this.wrapper_logo = ReactDOM.findDOMNode(wrapper_logo))}
+				 isHome={location.pathname === '/'}>
 					<header className='header'>
 						<div style={{width:300}}>  
 							<h1> 
