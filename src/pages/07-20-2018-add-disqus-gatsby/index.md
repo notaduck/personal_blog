@@ -37,7 +37,7 @@ yarn add disqus-react
 
 I have added the following lines to my post template, you want to add you shortname to `disqusShortname` and change the `identifier` and `title`to match your values which you are getting from graphql and passes it as a prop to you template component.  
 The `title` speaks for itself and the `identifier` is used by Disqus to identify the specific post, and since markdownRemark generates an uniquie id for each of your markdown files it makes sense to pass that id to the `identifier` 
-```jsx{3,4-6,12}
+```jsx{3-7,12}
 export default function Template({data}) {
     const {markdownRemark: post} = data;
     const disqusShortname = '<insert-disqus-shortname-here>';
