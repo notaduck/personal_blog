@@ -93,17 +93,6 @@ module.exports = {
 			}
 		},
 		{
-			resolve: 'gatsby-plugin-eslint',
-			options: {
-				test: /\.js$|\.jsx$/,
-				exclude: /(node_modules|cache|public)/,
-				options: {
-					emitWarning: true,
-					failOnError: false
-				}
-			}
-		},
-		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
 				trackingId: "UA-57212445-2",

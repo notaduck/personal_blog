@@ -14,9 +14,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "disqus-react": "^1.0.5",
     "gatsby": "next",
-    "gatsby-cli": "^1.1.58",
     "gatsby-image": "next",
-    "gatsby-link": "next",
     "gatsby-plugin-favicon": "next",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-manifest": "next",
@@ -24,7 +22,7 @@
     "gatsby-plugin-robots-txt": "next",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-sitemap": "next",
-    "gatsby-plugin-styled-components": "^2.0.11",
+    "gatsby-plugin-styled-components": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
     "gatsby-remark-katex": "next",
@@ -41,6 +39,9 @@
     "react-helmet": "^5.2.0",
     "styled-components": "^3.4.0"
   },
+  "peerDependencies": {
+    "gatsby": ">=1"
+  },
   "keywords": [
     "gatsby"
   ],
@@ -54,7 +55,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
-    "eslint": "^5.1.0",
+    "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-google": "^0.9.1",
     "eslint-config-standard": "^11.0.0",

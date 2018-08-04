@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout.js'
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
+import {graphql} from 'gatsby'
 import '../styles/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +14,7 @@ const IndexPage = ({data, location}) => (
 			<div key={post.node.id}className='container'>
 				<div className='thumbnail'>
 					<div style={{width:200}}>  
-						<Img sizes={post.node.frontmatter.image.childImageSharp.sizes} /> 
+						<Img fluid={post.node.frontmatter.image.childImageSharp.fluid} /> 
 					</div>
 				</div>
 				<div className='details'> 
@@ -51,8 +52,8 @@ query indexQuery {
 							image {
 								publicURL
 								childImageSharp {
-								sizes(maxWidth: 200) {
-								...GatsbyImageSharpSizes
+								fluid(maxWidth: 200) {
+								...GatsbyImageSharpFluid
 								}
 							}
 						}

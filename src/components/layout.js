@@ -1,43 +1,67 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import { StaticQuery, graphql } from "gatsby"
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faKey, faClock} from '@fortawesome/free-solid-svg-icons';
+
 import Header from '../components/header';
 import Footer from '../components/footer';
+
 import 'normalize.css';
 import '../layouts/index.css';
 import "prismjs/themes/prism.css"
 
 library.add(faEnvelope, faKey, faClock); // Add icons to the internal fontawesome libary
 
+// export const query = graphql`
+//   query SiteTitleQuery {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }	
 
+// 		background: imageSharp(id: { regex: "/desk.jpg/" }) {
+// 			fluid(maxWidth: 1920){
+// 				...GatsbyImageSharpFluid
+// 			}
+// 		}
 
-export const query = graphql`
+// 		logo: imageSharp(id: { regex: "/rev4.png/" }) {
+// 			fluid(maxWidth: 1920){
+// 				...GatsbyImageSharpFluid
+// 			}
+// 		} 
+// }
+// `
+
+const Layout = ({ children , location, data}) => (
+	<StaticQuery 
+		query={graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
         title
       }
     }	
-		background: imageSharp(id: { regex: "/desk.jpg/" }) {
-			sizes(maxWidth: 1920){
-				...GatsbyImageSharpSizes
+
+		background: imageSharp(fluid:{originalName : { regex: "/desk.jpg/" }}) {
+			fluid(maxWidth: 1920){
+				...GatsbyImageSharpFluid
 			}
 		}
 
-		logo: imageSharp(id: { regex: "/rev4.png/" }) {
-			sizes(maxWidth: 1920){
-				...GatsbyImageSharpSizes
+		logo: imageSharp(fluid:{originalName: { regex: "/rev4.png/" }}) {
+			fluid(maxWidth: 1920){
+				...GatsbyImageSharpFluid
 			}
 		} 
 }
-`
-
-const Layout = ({ children, data, location}) => (
-	<StaticQuery query={query}
-		render={data(
+	     `}
+		rendey={data => (
 			<>
 			<div>
 				<Helmet
@@ -48,8 +72,8 @@ const Layout = ({ children, data, location}) => (
 					]}
 				/>
 				<Header  
-					background={data.background.sizes} 
-					logo={data.logo.sizes}
+					background={data.background.fluid} 
+					logo={data.logo.fluid}
 					location={location}/>
 				<div
 					style={{
@@ -70,8 +94,8 @@ const Layout = ({ children, data, location}) => (
 );
 
 Layout.propTypes = {
-	children: PropTypes.func
-};
+	children: PropTypes.node.isRequired,
+}
 
 export default Layout;
 

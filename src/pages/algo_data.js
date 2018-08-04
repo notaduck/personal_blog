@@ -4,9 +4,10 @@ import Img from 'gatsby-image';
 import '../styles/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
-
+import { graphql } from 'gatsby' 
+import Layout from '../components/layout.js'
 const AlgoPage = ({data}) => (
-	<div>
+	<Layout>
 		<h1> Algorithms and Datastructures </h1>
 		{data.allMarkdownRemark.edges.map(post => (	
 			<div key={post.node.id}className='container'>
@@ -29,7 +30,7 @@ const AlgoPage = ({data}) => (
 			</div>
 
 		))}
-	</div>
+	</Layout>
 );
 
 

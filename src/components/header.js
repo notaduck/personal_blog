@@ -194,12 +194,12 @@ class Header extends React.Component {
 
 				{/* Add ref for logo image to animate */}
 				<HeaderContainer ref={wrapper_logo => (this.wrapper_logo = ReactDOM.findDOMNode(wrapper_logo))}
-				 isHome={location.pathname === '/'}>
+					isHome={location.pathname === '/'}>
 					<header className='header'>
 						<div style={{width:300}}>  
 							<h1> 
 								<Link exact to='/'> 
-									<Img sizes={logo} />
+									<Img fluid={logo} />
 								</Link>
 							</h1>
 						</div>
@@ -213,7 +213,7 @@ class Header extends React.Component {
 					height: '100%',
 					opacity: 0.5
 				}}
-				sizes={background} />
+				fluid={background} />
 			</HeaderWrapper>
 		);
 	}
@@ -230,7 +230,7 @@ Header.propTypes = {
 	background: PropTypes.shape({
 		aspectRatio: PropTypes.Number,
 		base64: PropTypes.String,
-		sizes: PropTypes.String,
+		fluid: PropTypes.String,
 		src: PropTypes.String,
 		srcSet: PropTypes.String
 	}),
@@ -238,7 +238,7 @@ Header.propTypes = {
 	logo: PropTypes.shape({
 		aspectRatio: PropTypes.Number,
 		base64: PropTypes.String,
-		sizes: PropTypes.String,
+		fluid: PropTypes.String,
 		src: PropTypes.String,
 		srcSet: PropTypes.String
 	})
