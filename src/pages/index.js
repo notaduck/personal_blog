@@ -1,12 +1,13 @@
 import React from 'react';
+import Layout from '../components/layout.js'
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
-import '../styles/index.scss';
+import '../styles/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
-const IndexPage = ({data}) => (
-	<div>
+const IndexPage = ({data, location}) => (
+	<Layout location={location}>
 		<h1> Posts </h1>
 		{data.allMarkdownRemark.edges.map(post => (	
 			<div key={post.node.id}className='container'>
@@ -29,7 +30,7 @@ const IndexPage = ({data}) => (
 			</div>
 
 		))}
-	</div>
+	</Layout>
 );
 
 
