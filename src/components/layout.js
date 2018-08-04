@@ -41,26 +41,27 @@ library.add(faEnvelope, faKey, faClock); // Add icons to the internal fontawesom
 const Layout = ({ children , location, data}) => (
 	<StaticQuery 
 		query={graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }	
+			query SiteTitleQuery {
+				site {
+					siteMetadata {
+						title
+					}
+				}	
 
-		background: imageSharp(fluid:{originalName : { regex: "/desk.jpg/" }}) {
-			fluid(maxWidth: 1920){
-				...GatsbyImageSharpFluid
+				background: imageSharp(fluid:{originalName : { regex: "/desk.jpg/" }}) {
+					fluid(maxWidth: 1920){
+						...GatsbyImageSharpFluid
+					}
+				}
+
+				logo: imageSharp(fluid:{originalName: { regex: "/rev4.png/" }}) {
+					fluid(maxWidth: 1920){
+						...GatsbyImageSharpFluid
+					}
+				} 
 			}
+	   `
 		}
-
-		logo: imageSharp(fluid:{originalName: { regex: "/rev4.png/" }}) {
-			fluid(maxWidth: 1920){
-				...GatsbyImageSharpFluid
-			}
-		} 
-}
-	     `}
 		rendey={data => (
 			<>
 			<div>
