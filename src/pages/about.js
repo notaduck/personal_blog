@@ -1,8 +1,8 @@
-
 import React from 'react';
+import Layout from '../components/layout.js'
 
-const About = () => (
-	<div>
+const About = ({location}) => (
+	<Layout location={location}>
 		<h1> About </h1>
 		<p>  
 orem ipsum dolor amet farm-to-table PBR&B glossier chambray. Squid snackwave ugh lo-fi master cleanse VHS pitchfork street art taxidermy disrupt fingerstache messenger bag. Waistcoat slow-carb selvage, retro organic mixtape craft beer ugh 90s farm-to-table irony man braid lumbersexual. +1 XOXO chicharrones, lomo ennui cornhole swag keytar cray sustainable twee air plant food truck pop-up. Kale chips kogi crucifix, tattooed polaroid mlkshk roof party bushwick tote bag vape knausgaard chia deep v tilde. Twee everyday carry af pug listicle.
@@ -19,7 +19,7 @@ Oh. You need a little dummy text for your mockup? How quaint.
 
 I bet you’re still using Bootstrap too…
 		</p>
-	</div>
+	</Layout>
 );
 
 export default About;

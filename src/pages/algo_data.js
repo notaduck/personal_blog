@@ -1,13 +1,14 @@
 import React from 'react';
+import { graphql } from 'gatsby' 
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
-import '../styles/index.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
-import { graphql } from 'gatsby' 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Layout from '../components/layout.js'
+import '../styles/index.css';
+
 const AlgoPage = ({data}) => (
-	<Layout>
+	<Layout location={location}>
 		<h1> Algorithms and Datastructures </h1>
 		{data.allMarkdownRemark.edges.map(post => (	
 			<div key={post.node.id}className='container'>
@@ -23,7 +24,8 @@ const AlgoPage = ({data}) => (
 						<h3>{post.node.frontmatter.title}</h3>
 					</Link>
 					<div className='date_details'>        
-						<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
+						{/*	<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>	*/}	
+
 					</div>
 					<p>{post.node.excerpt}</p>
 				</div>

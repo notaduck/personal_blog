@@ -5,7 +5,6 @@ import Img from 'gatsby-image';
 import {graphql} from 'gatsby'
 import '../styles/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 const IndexPage = ({data, location}) => (
 	<Layout location={location}>
