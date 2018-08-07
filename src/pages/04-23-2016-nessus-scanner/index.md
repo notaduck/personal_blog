@@ -7,6 +7,10 @@ type: 'blogpost'
 published: true 
 ---
 
+```r
+1+2
+```
+
 Nessus has a free version for personal use where you can scan your
 local network remotely for vulnerabilities that malicious hackers could use to
 gain access for you servers or computers at home.  

@@ -3,7 +3,7 @@ path: '/doubly-linked-list'
 title: 'Doubly linked list from scratch'
 image: '../../images/new-soon.png'
 date: '2018-07-22'
-type: 'algo'
+type: 'cs'
 published: true 
 ----------------------------------------------------------
 

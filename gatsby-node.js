@@ -1,10 +1,10 @@
-const path = require('path');
+const path = require('path')
 // import path from 'path'
 
 exports.createPages = ({actions, graphql}) => {
 
-	const {createPage} = actions;
-	const postTemplate = path.resolve('src/templates/post.js');  
+	const {createPage} = actions
+	const postTemplate = path.resolve('src/templates/post.js')  
 
 	return graphql(`{
     allMarkdownRemark {
@@ -22,7 +22,7 @@ exports.createPages = ({actions, graphql}) => {
   }`).
 		then(res => {
 			if (res.errors) {
-				return Promise.reject(res.errors);
+				return Promise.reject(res.errors)
 			}
 			res.data.allMarkdownRemark.edges.forEach(({node}) => {
 				createPage({
