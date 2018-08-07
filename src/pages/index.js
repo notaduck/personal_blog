@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout.js'
-import Link from 'gatsby-link'
+// import Link from 'gatsby-link'
 import Img from 'gatsby-image'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import '../styles/index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

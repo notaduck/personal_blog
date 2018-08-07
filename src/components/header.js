@@ -192,6 +192,7 @@ componentDidUpdate = prevProps => {
 
 render() {
 	const { background, location, logo } = this.props
+	console.log(location.pathname)
 	return (
 		<HeaderWrapper
 			ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
