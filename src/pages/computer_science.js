@@ -32,7 +32,7 @@ const ComputerScience = ({ data }) => (
 )
 
 export const query = graphql`
-  query indexQueryX {
+  query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true }, type: { eq: "cs" } } }
