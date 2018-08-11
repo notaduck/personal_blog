@@ -12,17 +12,17 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-favicon`,
+			resolve: 'gatsby-plugin-favicon',
 			options: {
-				logo: "./src/images/favicon.png",
+				logo: './src/images/favicon.png',
 
 				// WebApp Manifest Configuration
-				appName: 'Gatsby site',
+				appName: 'Guldberg lab',
 				appDescription: null,
 				developerName: null,
 				developerURL: null,
 				dir: 'auto',
-				lang: 'en-US',
+				lang: 'en-GB',
 				background: '#fff',
 				theme_color: '#fff',
 				display: 'standalone',
@@ -38,8 +38,8 @@ module.exports = {
 					favicons: true,
 					firefox: true,
 					opengraph: false,
-					twitter: false,
-					yandex: false,
+					twitter: true,
+					yandex: true,
 					windows: false
 				}
 			}
@@ -70,7 +70,7 @@ module.exports = {
 							// you may use this to prevent Prism from re-processing syntax.
 							// This is an uncommon use-case though;
 							// If you're unsure, it's best to use the default value.
-							classPrefix: "language-",
+							classPrefix: 'language-',
 							// This is used to allow setting a language for inline code
 							// (i.e. single backticks) by creating a separator.
 							// This separator is a string and will do no white-space
@@ -82,7 +82,7 @@ module.exports = {
 							// setting this to '{ sh: "bash" }' will let you use
 							// the language "sh" which will highlight using the
 							// bash highlighter.
-							aliases: {sh: "bash"},
+							aliases: {sh: 'bash'},
 						}
 					}
 				]
@@ -104,9 +104,9 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-google-analytics`,
+			resolve: 'gatsby-plugin-google-analytics',
 			options: {
-				trackingId: "UA-57212445-2",
+				trackingId: 'UA-57212445-2',
 				// Puts tracking script in the head instead of the body
 				head: true,
 				// Setting this parameter is optional
@@ -114,7 +114,7 @@ module.exports = {
 				// Setting this parameter is also optional
 				respectDNT: true,
 				// Avoids sending pageview hits from custom paths
-				exclude: ["/preview/**", "/do-not-track/me/too/"],
+				exclude: ['/preview/**', '/do-not-track/me/too/'],
 			},
 		},
 		{
@@ -125,9 +125,9 @@ module.exports = {
 	siteMetadata: {
 		author: 'Daniel Guldberg Aaes',
 		title: 'Guldberg lab',
-		name:"google-site-verification",
-		content:"Ji_Q-7Puvr2Mzy_ZhNDZ2F-hMubwpz3SujY2WAms9vY",
-		siteUrl: "https://guldberglab.info"
+		name:'google-site-verification',
+		content:'Ji_Q-7Puvr2Mzy_ZhNDZ2F-hMubwpz3SujY2WAms9vY',
+		siteUrl: 'https://guldberglab.info'
 	},
 	// pathPrefix: '/personal_blog'
-};
+}

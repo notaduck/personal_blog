@@ -31,7 +31,7 @@ const Layout = ({ children, location, data }) => (
           fluid: { originalName: { regex: "/desk.jpg/" } }
         ) {
           fluid(maxWidth: 1920) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
 

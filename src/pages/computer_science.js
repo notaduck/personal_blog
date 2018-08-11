@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
