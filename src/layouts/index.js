@@ -1,17 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faKey, faClock} from '@fortawesome/free-solid-svg-icons';
+
+import PropTypes from 'prop-types';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons'
+
 import Header from '../components/header';
 import Footer from '../components/footer';
+
 import 'normalize.css';
 import './index.scss';
-import "prismjs/themes/prism.css"
+import "../styles/prism.css"
 
-import icon32 from '../images/favicon-32x32.png'
-
-library.add(faEnvelope, faKey, faClock); // Add icons to the internal fontawesome libary
+library.add(faEnvelope, faClock, fab) // Add icons to the internal fontawesome libary
 
 const Layout = ({ children, data, location}) => (
 	<div>
