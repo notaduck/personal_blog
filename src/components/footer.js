@@ -25,14 +25,19 @@ const socialLinks = [
 	{
 		name: 'Facebook',
 		link: 'https://www.facebook.com/daniel.guldberg.aaes',
-		icon: 'envelope'
+		icon: ['fab', 'facebook'],
 	},
 	{
 		name: 'Github',
 		link: 'https://github.com/notaduck',
-		icon: 'envelope'
-	}
-];
+		icon: ['fab', 'github'],
+	},
+	{
+		name: 'Mail',
+		link: 'mailto:guldberg72@gmail.com?Subject=Hello%20again',
+		icon: 'envelope',
+	},
+]
 
 const Footer = () => (
 	<FooterWrapper>
