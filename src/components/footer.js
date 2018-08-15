@@ -15,6 +15,10 @@ const FooterWrapper = styled.ul`
 		color: #ECF0F1;
     text-decoration: none;
 	}
+
+  a:hover { 
+    border-bottom: 3px solid #ECF0F1;
+  }
 	
 	li {
 		margin: 0;
