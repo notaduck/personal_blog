@@ -4,6 +4,14 @@ import Img from 'gatsby-image';
 import '../styles/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components'
+
+const Title = styled.h3`
+	color: black;
+`
+const LinkWrapper = styled(Link)`
+	text-decoration: none;
+`
 
 const IndexPage = ({data}) => (
 	<div>
@@ -16,11 +24,11 @@ const IndexPage = ({data}) => (
 					</div>
 				</div>
 				<div className='details'> 
-					<Link 
+					<LinkWrapper 
 						key={post.node.id} 
 						to={post.node.frontmatter.path}>
-						<h3>{post.node.frontmatter.title}</h3>
-					</Link>
+						<Title>{post.node.frontmatter.title}</Title>
+					</LinkWrapper>
 					<div className='date_details'>        
 						<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
 					</div>
