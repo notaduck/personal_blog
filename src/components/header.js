@@ -5,6 +5,8 @@ import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
+import { NavBar, NavItem } from "../components/navigation";
+
 const HeaderWrapper = styled.div`
 	background: #2F333D;
 	margin-bottom: 2.5rem;
@@ -44,56 +46,6 @@ const HeaderContainer = styled.div`
 	}
 `;
 
-const NavBar = styled.nav`
-		{
-
-			position:absolute;
-			right:0.4875rem;
-			transition:.4s;
-			bottom: 10px;
-			z-index:10;
-		}
-	ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			background-color: #ECF0F1;
-	}
-
-	li {
-			float: left;
-			margin-bottom: 0;
-	}
-
-	li a {
-			display: block;
-			color: white;
-			text-align: center;
-			padding: 10px 16px;
-			text-decoration: none;
-			color: #2F333D;
-			transition: .5s;		
-			border-bottom: 4px solid #ecf0f1;
-	}
-
-	li a:hover:not(.active) {
-		border-bottom: 4px solid #2F333D;
-	}
-
-	.active {
-		border-bottom: 4px solid #BC435D;
-		background-color: #BC435D;
-	}
-
-	// added media query for responsive navbar make li width 100% when window size in small	
-	@media (max-width: 636px) {
-		width:97%;
-		li{
-			width:100%;
-		}
-	  }
-`;
 
 const navLinks = [
 	{
@@ -185,16 +137,16 @@ class Header extends React.Component {
 				<NavBar >
 					<ul>
 						{navLinks.map(link => (
-							<li key={link.name}>
+							<NavItem key={link.name}>
 								<Link exact to={link.path}> {link.name} </Link>
-							</li>
+							</NavItem>
 						))}
 					</ul>
 				</NavBar>
 
 				{/* Add ref for logo image to animate */}
 				<HeaderContainer ref={wrapper_logo => (this.wrapper_logo = ReactDOM.findDOMNode(wrapper_logo))}
-				 isHome={location.pathname === '/'}>
+					isHome={location.pathname === '/'}>
 					<header className='header'>
 						<div style={{width:300}}>  
 							<h1> 
