@@ -1,14 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
-import '../styles/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
 
-const Title = styled.h3`
-	color: black;
-`
+import {Post, PostTitle, PostDetails, PostThumbnail} from '../components/postList'
+
+
 const LinkWrapper = styled(Link)`
 	text-decoration: none;
 `
@@ -17,24 +15,22 @@ const IndexPage = ({data}) => (
 	<div>
 		<h1> Posts </h1>
 		{data.allMarkdownRemark.edges.map(post => (	
-			<div key={post.node.id}className='container'>
-				<div className='thumbnail'>
+			<Post key={post.node.id}>
+				<PostThumbnail>
 					<div style={{width:200}}>  
 						<Img sizes={post.node.frontmatter.image.childImageSharp.sizes} /> 
 					</div>
-				</div>
-				<div className='details'> 
+				</PostThumbnail>
+				<PostDetails> 
 					<LinkWrapper 
 						key={post.node.id} 
 						to={post.node.frontmatter.path}>
-						<Title>{post.node.frontmatter.title}</Title>
+						<PostTitle>{post.node.frontmatter.title}</PostTitle>
 					</LinkWrapper>
-					<div className='date_details'>        
-						<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
-					</div>
+					<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
 					<p>{post.node.excerpt}</p>
-				</div>
-			</div>
+				</PostDetails>
+			</Post>
 
 		))}
 	</div>

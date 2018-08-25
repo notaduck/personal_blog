@@ -128,7 +128,7 @@ class Header extends React.Component {
 
 	render() {
 		const { background, location, logo} = this.props;
-		
+
 		return (
 			<HeaderWrapper
 				ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}

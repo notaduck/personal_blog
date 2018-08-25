@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
-import '../styles/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
