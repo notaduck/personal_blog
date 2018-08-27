@@ -54,8 +54,8 @@ const navLinks = [
 	},
 	
 	{
-		name: 'Tech theory ',
-		path: '/algo_data'
+		name: 'Computer science ',
+		path: '/computer_science'
 	},
 	{
 		name: 'About',
