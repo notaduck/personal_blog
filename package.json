@@ -35,6 +35,7 @@
     "normalize.css": "^8.0.0",
     "prismjs": "^1.15.0",
     "react-addons-create-fragment": "^15.6.2",
+    "react-cookie-consent": "^1.7.0",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.3.3"
   },

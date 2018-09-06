@@ -4,32 +4,39 @@ import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
+import styled from 'styled-components'
+import {Post, PostTitle, PostDetails, PostThumbnail} from '../components/postList'
+
+
+const LinkWrapper = styled(Link)`
+	text-decoration: none;
+`
+
 const AlgoPage = ({data}) => (
 	<div>
-		<h1> Computer Science </h1>
+		<h1> Posts </h1>
 		{data.allMarkdownRemark.edges.map(post => (	
-			<div key={post.node.id}className='container'>
-				<div className='thumbnail'>
+			<Post key={post.node.id}>
+				<PostThumbnail>
 					<div style={{width:200}}>  
 						<Img sizes={post.node.frontmatter.image.childImageSharp.sizes} /> 
 					</div>
-				</div>
-				<div className='details'> 
-					<Link 
+				</PostThumbnail>
+				<PostDetails> 
+					<LinkWrapper 
 						key={post.node.id} 
 						to={post.node.frontmatter.path}>
-						<h3>{post.node.frontmatter.title}</h3>
-					</Link>
-					<div className='date_details'>        
-						<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
-					</div>
+						<PostTitle>{post.node.frontmatter.title}</PostTitle>
+					</LinkWrapper>
+					<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
 					<p>{post.node.excerpt}</p>
-				</div>
-			</div>
+				</PostDetails>
+			</Post>
 
 		))}
 	</div>
 );
+
 
 
 export const query = graphql`
