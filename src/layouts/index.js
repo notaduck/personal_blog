@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import fontawesome from '@fortawesome/fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faClock, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -59,7 +59,13 @@ const Layout = ({ children, data, location}) => (
 );
 
 Layout.propTypes = {
-	children: PropTypes.func
+	children: PropTypes.func,
+	data: PropTypes.shape({
+		background: PropTypes.object,
+		logo: PropTypes.object,
+		site: PropTypes.object
+	}),
+	location: PropTypes.object
 };
 
 export default Layout;
@@ -82,16 +88,5 @@ export const query = graphql`
 				...GatsbyImageSharpSizes
 			}
 		}
-		hej: allMarkdownRemark (
-		filter: { frontmatter: { published: {eq: true} } }
-	){
-    edges {
-      node {
-        frontmatter {
-          path
-        }
-      }
-    }
-  }
 }
 `;

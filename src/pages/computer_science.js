@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components'
 import {Post, PostTitle, PostDetails, PostThumbnail} from '../components/postList'
@@ -37,7 +39,13 @@ const AlgoPage = ({data}) => (
 	</div>
 );
 
-
+AlgoPage.propTypes = {
+	data: PropTypes.shape({
+		background: PropTypes.object,
+		logo: PropTypes.object,
+		site: PropTypes.object
+	}),
+}
 
 export const query = graphql`
 query indexQueryX {

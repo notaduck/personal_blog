@@ -1,4 +1,6 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,7 +29,7 @@ const IndexPage = ({data}) => (
 						to={post.node.frontmatter.path}>
 						<PostTitle>{post.node.frontmatter.title}</PostTitle>
 					</LinkWrapper>
-					<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='coffee' /> {post.node.timeToRead} min read</p>
+					<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='coffee' size="sm" /> {post.node.timeToRead} min read</p>
 					<p>{post.node.excerpt}</p>
 				</PostDetails>
 			</Post>
@@ -36,6 +38,13 @@ const IndexPage = ({data}) => (
 	</div>
 );
 
+IndexPage.propTypes = {
+	data: PropTypes.shape({
+		background: PropTypes.object,
+		logo: PropTypes.object,
+		site: PropTypes.object
+	})
+};
 
 export const query = graphql`
 query indexQuery {
