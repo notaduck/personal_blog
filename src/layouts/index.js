@@ -52,7 +52,6 @@ const Layout = ({ children, data, location}) => (
 				}}
 			>
 				<ThemeProvider theme={theme}>{children()}</ThemeProvider>
-
 			</div>
 			<Footer />
 		</div>
