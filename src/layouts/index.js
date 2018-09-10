@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faClock, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -16,7 +16,7 @@ import './index.scss';
 import "../styles/prism.css"
 import { theme } from '../styles/theme'
 
-library.add(faEnvelope, faClock, fab) // Add icons to the internal fontawesome libary
+library.add(faEnvelope, faClock, faCoffee, fab) // Add icons to the internal fontawesome libary
 
 const Layout = ({ children, data, location}) => (
 	<ThemeProvider theme={ theme }>

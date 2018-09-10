@@ -27,7 +27,7 @@ const IndexPage = ({data}) => (
 						to={post.node.frontmatter.path}>
 						<PostTitle>{post.node.frontmatter.title}</PostTitle>
 					</LinkWrapper>
-					<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='clock' /> {post.node.timeToRead} min read</p>
+					<p> {post.node.frontmatter.date} <FontAwesomeIcon icon='coffee' /> {post.node.timeToRead} min read</p>
 					<p>{post.node.excerpt}</p>
 				</PostDetails>
 			</Post>
