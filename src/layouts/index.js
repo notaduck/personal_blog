@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components'
 
+import fontawesome from '@fortawesome/fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faClock, faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -16,7 +17,15 @@ import './index.scss';
 import "../styles/prism.css"
 import { theme } from '../styles/theme'
 
-library.add(faEnvelope, faClock, faCoffee, fab) // Add icons to the internal fontawesome libary
+
+fontawesome.config = {
+	autoAddCss: false
+}
+
+library.add(
+	faEnvelope,
+	faCoffee,
+	fab) // Add icons to the internal fontawesome libary
 
 const Layout = ({ children, data, location}) => (
 	<ThemeProvider theme={ theme }>
