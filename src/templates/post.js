@@ -1,4 +1,5 @@
 import React from 'react';
+import AdSense from 'react-adsense';
 import styled from 'styled-components';
 import Link from 'gatsby-link'
 import { DiscussionEmbed } from "disqus-react";
@@ -32,6 +33,14 @@ export default function Template({data}) {
 		Home </Link>
 			</Button>
 			<DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+
+			<AdSense.Google
+				client='ca-pub-2807294246407689'
+				slot='2165861051'
+				style={{ display: 'block' }}
+				layout='in-article'
+				format='fluid'
+			/>
 		</div>
 	)
 }
