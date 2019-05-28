@@ -1,7 +1,12 @@
-% Install npm global packages without root acces ( sudo )
-% Daniel Guldberg Aaes	 
-% 28 May 2019
+---
+path: '/npm_global'
+title: 'Install npm global packages without root acces ( sudo )'
+image: '../../images/coming-soon.jpg'
+date: '2019-06-27'
+type: 'blogpost'
 
+published: true 
+---
 
 There is a lot of `npm` packages out there, and some which is useful to have installed globally so you can run them from the terminal no matter where you are. However you don't really want to give all `npm` packages root access to your system.  
   
